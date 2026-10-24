@@ -1,0 +1,64 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Set ValheimDir and BepInExCoreDir as MSBuild properties or environment variables. -->
+    <ValheimDir Condition="'$(ValheimDir)' == ''">$(VALHEIM_DIR)</ValheimDir>
+    <BepInExCoreDir Condition="'$(BepInExCoreDir)' == ''">$(BEPINEX_CORE_DIR)</BepInExCoreDir>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>BuildMenuQOL</AssemblyName>
+    <Version>0.2.0</Version>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
+    <RootNamespace>BuildMenuQOL</RootNamespace>
+  </PropertyGroup>
+
+
+  <Target Name="ValidateBuildPaths" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(ValheimDir)' == ''" Text="Set ValheimDir to the Valheim installation directory (or set VALHEIM_DIR)." />
+    <Error Condition="'$(BepInExCoreDir)' == ''" Text="Set BepInExCoreDir to the BepInEx core directory (or set BEPINEX_CORE_DIR)." />
+    <Error Condition="!Exists('$(ValheimDir)/valheim_Data/Managed/assembly_valheim.dll')" Text="Valheim assembly not found under ValheimDir: $(ValheimDir)" />
+    <Error Condition="!Exists('$(ValheimDir)/valheim_Data/Managed/Assembly-CSharp.dll')" Text="Assembly-CSharp.dll not found under ValheimDir: $(ValheimDir)" />
+    <Error Condition="!Exists('$(BepInExCoreDir)/BepInEx.dll')" Text="BepInEx.dll not found under BepInExCoreDir: $(BepInExCoreDir)" />
+    <Error Condition="!Exists('$(BepInExCoreDir)/0Harmony.dll')" Text="0Harmony.dll not found under BepInExCoreDir: $(BepInExCoreDir)" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExCoreDir)/BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExCoreDir)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="assembly_valheim">
+      <HintPath>$(ValheimDir)/valheim_Data/Managed/assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(ValheimDir)/valheim_Data/Managed/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine">
+      <HintPath>$(ValheimDir)/valheim_Data/Managed/UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ValheimDir)/valheim_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ValheimDir)/valheim_Data/Managed/UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(ValheimDir)/valheim_Data/Managed/UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
