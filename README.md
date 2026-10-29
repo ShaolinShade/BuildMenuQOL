@@ -12,6 +12,8 @@ Build Menu QOL is a small, client-side UI mod that improves the functionality of
 
 Unlike the vanilla button for it, the repair hotkey doesn't require you to first open the build menu in order to swap to repair mode. You can swap directly to and from repair mode now while building other pieces, or even while in combat with the equip toggle and re-equip gear options (enabled by default). The other hotkeys function as they do in vanilla.
 
+**Note if playing on controller:** Hotkey rebind options and show/hide toggles are limited to keyboard/mouse, since controller mappings can't be rebound and shortcut badges always show for controller menus. Meaning that controller implementation is limited to a hard-coded controller shortcut for repair mode: **Alt**/**modifier** (LT or LB on xbox, L or ZL on switch, L1 or L2 on playstation) **+** **Inventory** (Y on xbox, X on switch, triangle on playstation). The "Equip Toggle" and "Re-bind previous gear" options still work for controller use though, affecting when this combo works and what it does.
+
 ## Requirements
 This mod needs Bepinex to be installed and running with your build of the game.
 
