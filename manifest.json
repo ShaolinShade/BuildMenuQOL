@@ -1,8 +1,8 @@
 {
   "name": "BuildMenuQOL",
-  "version_number": "0.2.0",
-  "website_url": "",
-  "description": "Adds the filter/repair sidebar to the Recent menu and adds configurable, hidable hotkeys for Repair, Filter and menu tabs",
+  "version_number": "0.3.0",
+  "website_url": "https://github.com/ShaolinShade/BuildMenuQOL",
+  "description": "Adds the filter/repair sidebar to the Recent menu and adds configurable hotkeys and badges for repair, filter, menu tab previous and tab forward",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2351"
   ]

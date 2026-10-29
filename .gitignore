@@ -6,21 +6,5 @@ obj/
 # Release archives and generated staging files
 release/
 
-# Timestamped source backups
-*.backup-*
-
-# Backup copies of source files
-*.cs.backup
-*.csproj.backup
-*.sln.backup
-
-# Editor and operating-system clutter
-.vs/
-.vscode/
-.idea/
+# OS clutter
 *~
-.DS_Store
-Thumbs.db
-
-# Local backups
-backups/
