@@ -18,7 +18,7 @@ Unlike the vanilla button for it, the repair hotkey doesn't require you to first
 This mod needs Bepinex to be installed and running with your build of the game.
 
 ## Installation
-Installing through a mod manager like Thunderstore, R2MM or Amethyst is the easiest way to get up and running with it. The Thunderstore manifest should declare the required Valheim BepInEx package as a dependency so compatible managers can install it automatically. 
+Installing through a mod manager like Gale, R2MM or Amethyst is the easiest way to get up and running with it. The manifest should declare the required Valheim BepInEx package as a dependency so compatible managers can install it automatically. 
 
 For Manual Installation:
     1. Install BepInExPack for Valheim (if you haven't already)
